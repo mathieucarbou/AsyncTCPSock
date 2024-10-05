@@ -914,6 +914,9 @@ void AsyncClient::_sockPoll(void)
 
     _notifyWrittenBuffers(notifylist, sent_errno);
 
+    /* Connection migh be closed after ACK notification. */
+    if (!connected()) return;
+
     uint32_t now = millis();
 
     // ACK Timeout - simulated by write queue staleness
