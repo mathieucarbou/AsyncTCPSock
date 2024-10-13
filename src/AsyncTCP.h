@@ -39,6 +39,12 @@ extern "C" {
     #include "lwip/sockets.h"
 }
 
+#define ASYNCTCP_VERSION "1.0.2-dev"
+#define ASYNCTCP_VERSION_MAJOR 1
+#define ASYNCTCP_VERSION_MINOR 2
+#define ASYNCTCP_VERSION_REVISION 2
+#define ASYNCTCP_FORK_mathieucarbou
+
 //If core is not defined, then we are running in Arduino or PIO
 #ifndef CONFIG_ASYNC_TCP_RUNNING_CORE
 #define CONFIG_ASYNC_TCP_RUNNING_CORE -1 //any available core
