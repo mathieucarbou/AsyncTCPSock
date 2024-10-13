@@ -62,7 +62,7 @@ static bool _start_asyncsock_task(void)
         log_i("Creating asyncTcpSock task running in core %d (-1 for any available core)...", CONFIG_ASYNC_TCP_RUNNING_CORE);
         xTaskCreateUniversal(
             _asynctcpsock_task,
-            "asyncTcpSock",
+            CONFIG_ASYNC_TCP_TASK_NAME,
             CONFIG_ASYNC_TCP_STACK,
             NULL,
             CONFIG_ASYNC_TCP_TASK_PRIORITY,

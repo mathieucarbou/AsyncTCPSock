@@ -62,6 +62,9 @@ extern "C" {
 #ifndef CONFIG_ASYNC_TCP_TASK_PRIORITY
 #define CONFIG_ASYNC_TCP_TASK_PRIORITY CONFIG_ASYNC_TCP_PRIORITY
 #endif
+#ifndef CONFIG_ASYNC_TCP_TASK_NAME
+#define CONFIG_ASYNC_TCP_TASK_NAME "asyncTcpSock"
+#endif
 
 class AsyncClient;
 
