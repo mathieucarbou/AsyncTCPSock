@@ -65,7 +65,12 @@ extern "C" {
 
 class AsyncClient;
 
-#define ASYNC_MAX_ACK_TIME 5000
+#ifndef CONFIG_ASYNC_TCP_MAX_ACK_TIME
+#define CONFIG_ASYNC_TCP_MAX_ACK_TIME 5000
+#endif
+#ifndef ASYNC_MAX_ACK_TIME
+#define ASYNC_MAX_ACK_TIME CONFIG_ASYNC_TCP_MAX_ACK_TIME
+#endif
 #define ASYNC_WRITE_FLAG_COPY 0x01 //will allocate new buffer to hold the data while sending (else will hold reference to the data given)
 #define ASYNC_WRITE_FLAG_MORE 0x02 //will not send PSH flag, meaning that there should be more data to be sent before the application should react.
 #define SSL_HANDSHAKE_TIMEOUT 5000 // timeout to complete SSL handshake
